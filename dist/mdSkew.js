@@ -85,15 +85,33 @@ mdSkew.prototype = {
         var scrollSpeed = 0;
         var skewY = 0;
         var that = this;
+        var pos = {y:0};
 
-        window.addEventListener('wheel', function(e) {
+        function _wheel(e){
             isScrolling = true;
             scrollSpeed = e.deltaY;
 
             if (scrollSpeed > 0) {
                 scrollSpeed = Math.abs(scrollSpeed) * -1;
-            }
-        });
+            }            
+        }
+
+        function _touchMove(e){
+            isScrolling = true;
+            scrollSpeed = pos.y - e.touches[0].clientY;
+
+            if (scrollSpeed > 0) {
+                scrollSpeed = Math.abs(scrollSpeed) * -1;
+            }            
+        }
+
+        function _touchStart(e){
+            pos.y = e.touches[0].clientY;           
+        }
+
+        window.addEventListener('wheel', _wheel, false);
+        window.addEventListener('touchmove', _touchMove, false);
+        window.addEventListener('touchstart', _touchStart, false);
 
 
         function _skew() {
