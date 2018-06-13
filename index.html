@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Easily add a super-cool skew effect while scrolling your website.">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="mdSkew.js | A plugin by Moreno Di Domenico" />
+    <meta property="og:url" content="https://morenodd.com/lab/mds-kew" />
+    <meta property="og:site_name" content="mdSkew.js | A plugin by Moreno Di Domenico" />
+    <meta property="og:description" content="Easily add a super-cool skew effect while scrolling your website." />
+    <meta property="og:image" content="https://morenodd.com/lab/md-skew/assets/images/share.jpg" />
+	<title>mdSkew.js | A plugin by Moreno Di Domenico</title>
+	<link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/styles/common.css">
+	<link rel="stylesheet" type="text/css" href="assets/styles/main.min.css">
+</head>
+<body>
+    <div id="mdd-header">
+        <a href="https://morenodd.com/laboratory" class="back">
+            <svg id="icon-arrow" viewBox="0 0 24 24" width="100%" height="100%">
+                <polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 "></polygon>
+            </svg>
+        </a>
+        <h1>Back to laboratory</h1>
+    </div>
+    <div id="mdd-share">
+        <a href="#" id="mdd-share--open"><i class="fa fa-share-alt"></i></a>
+        <div id="mdd-share--layer">
+            <a href="#" id="mdd-share--close"></a>
+            <div class="wrapper">
+                <div class="inner">
+                    <div>
+                        <div>
+                            <h3>SHARE ON</h3>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://morenodd.com/lab/md-skew" class="md-share"><i class="fa fa-facebook"></i></a>
+                            <a href="https://twitter.com/share?text=mdSkew.js%20-%20A%20plugin%20by%20Moreno%20Di%20Domenico&amp;url=https://morenodd.com/lab/md-skew" class="md-share"><i class="fa fa-twitter"></i></a>
+                        </div>
+                        <div>
+                            <h3>FIND ME</h3>
+                            <a href="https://facebook.com/itsmorenodd" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="https://dribbble.com/morenodd" target="_blank"><i class="fa fa-dribbble"></i></a>
+                            <a href="https://github.com/morenodd/" target="_blank"><i class="fa fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<div id="main-wrap">
+		<div class="head">
+			<h1>mdSkew.js <span>v1.0</span></h1>
+			<p>Easily add a super-cool skew effect while scrolling your website.</p>
+		</div>
+		<div class="actions">
+			<a href="https://github.com/MorenoDD/mdSkew.js/archive/master.zip" class="btn">Download</a>
+			<a href="https://github.com/MorenoDD/mdSkew.js" target="_blank" class="btn btn--outline">View on Github</a>
+		</div>
+
+		<div class="section">
+			<h3>Introduction</h3>
+			<p>Suggestion are more than welcome, not only for feature requests but also for coding style improvements. Let's make this a great library to make people's lives easier!</p>
+		</div>
+
+		<div class="section">
+			<h3>Examples</h3>
+			<ul>
+				<li><a href="demo/1.html" target="_blank">Demo 1</a></li>
+				<li><a href="demo/2.html" target="_blank">Demo 2</a></li>
+				<li><a href="demo/3.html" target="_blank">Demo 3</a></li>
+			</ul>
+		</div>
+
+
+		<div class="section">
+			<h3>Required Files</h3>
+			<p>Simply include <strong>mdSkew.js</strong> (or its minified version <strong>mdSkew.min.js</strong>).</p>
+		</div>
+
+
+		<div class="section">
+			<h3>Initialization</h3>
+			<p>All you need to do is call mdSkew.js inside your js:</p>
+			<pre><code>// select your element<br />var myElement = document.getElementByID("my-element");<br /><br />// create the instance<br />var mdskew = new mdSkew(myElement);<br /><br />// initialize<br />mdskew.init();</code></pre>
+			<p>If you need multiple instance:</p>
+			<pre><code>// select your elements<br />var myElements = document.querySelectorAll("h2");<br /><br />// loop all elements<br />myElements.forEach(function(myElement){<br /><br />// create the instance<br />var mdskew = new mdSkew(myElement);<br /><br />// initialize<br />mdskew.init();<br /><br />});</code></pre>
+			<p>A more complex initialization with all options set could look like this:</p>
+			<pre><code><span>var mdskew = new mdSkew(myElement, {<br />min: 0,<br />max: 5,<br />speed: 1,<br />setCSS: true,<br />transition: 'transform .6s cubic-bezier(.215,.61,.355,1)',<br />transformOrigin: '50% 50%'<br />});</span></code></pre>
+		</div>
+
+
+		<div class="section">
+			<h3>Options</h3>
+			<ul>
+				<li><strong>min</strong>: (default 0) The minimum degrees (it will converted in negative).</li>
+				<li><strong>max</strong>: (default 5) The maximum degrees (it will converted in negative).</li>
+				<li><strong>speed</strong>: (default 1) Set the speed of the movement (from 0 to 1).</li>
+				<li><strong>setCSS</strong>: (default true) Set default CSS properties for the element.</li>
+				<li><strong>transition</strong>: (default transform .6s cubic-bezier(.215,.61,.355,1)) Set CSS transition property for the element.</li>
+				<li><strong>transformOrigin</strong>: (default 50% 50%) Set CSS transform-origin property for the element.</li>
+			</ul>
+		</div>
+
+		<div class="section">
+			<h3>jQuery integration</h3>
+			<pre><code>$('.my-element').mdSkew();</code></pre>
+		</div>
+
+		<div class="section">
+			<h3>Reporting issues</h3>
+			<ul>
+				<li>1. Please, look for your issue before asking using the github issues search.</li>
+				<li>2. Make sure you use the latest mdSkew.js version. No support is provided for older versions.</li>
+				<li>3. Use the the <a href="https://github.com/MorenoDD/mdSkew.js/issues" target="_blank">Github Issues forum</a> to create issues.</li>
+				<li>4. An isolated reproduction of the issue will be required. Make use of <a href="https://jsfiddle.net/" target="_blank">jsfiddle</a> or <a href="http://codepen.io/" target="_blank">codepen</a> for it if possible.</li>
+			</ul>
+		</div>
+
+		<div class="section">
+			<h3>Who is using mdSkew.js</h3>
+			<p>If you want your page to be listed here, please <a href="mailto:hello@morenodd.com">contact me</a> with the URL.</p>
+		</div>
+
+		<div class="section">
+			<h3>Donations</h3>
+			<p>Donations would be more than welcome :)</p>
+			<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=YXUWQZLQPRBKN&amp;lc=GB&amp;item_name=Moreno%20Di%20Domenico&amp;item_number=mdSkew&amp;no_note=0&amp;cn=Aggiungi%20istruzioni%20speciali%20per%20il%20venditore%3a&amp;no_shipping=2&amp;currency_code=EUR&amp;bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted" rel="nofollow"><img src="https://camo.githubusercontent.com/24ae43518013d5c9306ddadbbc2fdea234d3522c/68747470733a2f2f7777772e70617970616c6f626a656374732e636f6d2f656e5f55532f47422f692f62746e2f62746e5f646f6e61746543435f4c472e676966" alt="Donate" data-canonical-src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" style="max-width:100%;"></a>
+		</div>
+
+		<div class="section">
+			<h3>Sponsors</h3>
+			<p>Become a sponsor and get your logo on our README on Github with a link to your site.</p>
+		</div>
+
+		<div class="section">
+			<h3>License</h3>
+			<p>The credit comments in the JavaScript and CSS files should be kept intact (even after combination or minification )</p>
+
+			<p>(The MIT License)</p>
+
+			<p>Copyright (c) 2018 Moreno Di Domenico - <a href="mailto:hello@morenodd.com">hello@morenodd.com</a></p>
+
+			<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+			<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+			<p>THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+		</div>
+	</div>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script>
+    (function($) {
+
+        var $mddShare = $('#mdd-share'),
+            $mddShareOpen = $('#mdd-share--open'),
+            $mddShareClose = $('#mdd-share--close'),
+            $mddShareLayer = $('#mdd-share--layer');
+
+        $mddShareOpen.on('click', function() {
+            $mddShare.addClass('in');
+            return false;
+        });
+
+        $mddShareClose.on('click', function() {
+            $mddShare.removeClass('in');
+            return false;
+        });
+
+        $mddShareLayer.find('.md-share').on('click', function() {
+            window.open(jQuery(this).attr('href'), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');
+            return false;
+        });
+    })(jQuery);
+    </script>
+</body>
+</html>

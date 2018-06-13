@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Easily add a super-cool skew effect while scrolling your website.">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="mdSkew.js | A plugin by Moreno Di Domenico" />
+    <meta property="og:url" content="https://morenodd.com/lab/mds-kew" />
+    <meta property="og:site_name" content="mdSkew.js | A plugin by Moreno Di Domenico" />
+    <meta property="og:description" content="Easily add a super-cool skew effect while scrolling your website." />
+    <meta property="og:image" content="https://morenodd.com/lab/md-skew/assets/images/share.jpg" />
+    <title>mdSkew.js | A plugin by Moreno Di Domenico</title>
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../assets/styles/common.css">
+    <link rel="stylesheet" type="text/css" href="../assets/styles/demo.css">
+</head>
+
+<body>
+    <div id="mdd-header">
+        <a href="../" class="back">
+            <svg id="icon-arrow" viewBox="0 0 24 24" width="100%" height="100%">
+                <polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 "></polygon>
+            </svg>
+        </a>
+        <h1>Back to docs</h1>
+    </div>
+    <div id="mdd-share">
+        <a href="#" id="mdd-share--open"><i class="fa fa-share-alt"></i></a>
+        <div id="mdd-share--layer">
+            <a href="#" id="mdd-share--close"></a>
+            <div class="wrapper">
+                <div class="inner">
+                    <div>
+                        <div>
+                            <h3>SHARE ON</h3>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://morenodd.com/lab/md-skew" class="md-share"><i class="fa fa-facebook"></i></a>
+                            <a href="https://twitter.com/share?text=mdSkew.js%20-%20A%20plugin%20by%20Moreno%20Di%20Domenico&amp;url=https://morenodd.com/lab/md-skew" class="md-share"><i class="fa fa-twitter"></i></a>
+                        </div>
+                        <div>
+                            <h3>FIND ME</h3>
+                            <a href="https://facebook.com/itsmorenodd" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="https://dribbble.com/morenodd" target="_blank"><i class="fa fa-dribbble"></i></a>
+                            <a href="https://github.com/morenodd/" target="_blank"><i class="fa fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="demo">
+        <div class="demo-1">
+            <div class="section">
+                <div class="wrapper">
+                    <div class="inner">
+                        <h2>YOU CAN</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="wrapper">
+                    <div class="inner">
+                        <h2>CREATE</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="wrapper">
+                    <div class="inner">
+                        <h2>AWESOME</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="wrapper">
+                    <div class="inner">
+                        <h2>ANIMATIONS</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="../dist/mdSkew.min.js"></script>
+    <script>
+
+        // select your elements
+        var myElements = document.querySelectorAll("h2");
+
+        // loop all elements
+        myElements.forEach(function(myElement){
+
+            // create the instance
+            var mdskew = new mdSkew(myElement);
+
+            // initialize
+            mdskew.init();
+
+        });
+
+
+
+        (function($) {
+
+            var $mddShare = $('#mdd-share'),
+                $mddShareOpen = $('#mdd-share--open'),
+                $mddShareClose = $('#mdd-share--close'),
+                $mddShareLayer = $('#mdd-share--layer');
+
+            $mddShareOpen.on('click', function() {
+                $mddShare.addClass('in');
+                return false;
+            });
+
+            $mddShareClose.on('click', function() {
+                $mddShare.removeClass('in');
+                return false;
+            });
+
+            $mddShareLayer.find('.md-share').on('click', function() {
+                window.open(jQuery(this).attr('href'), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');
+                return false;
+            });
+        })(jQuery);
+    </script>
+</body>
+
+</html>
