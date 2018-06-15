@@ -22,6 +22,7 @@
 
 .demo-1 .section {
     height: 100vh;
+    margin-bottom: 0;
 }
 
 .demo-1 .section:nth-child(1) {

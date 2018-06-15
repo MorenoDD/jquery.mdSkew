@@ -15,7 +15,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="assets/styles/common.css">
-	<link rel="stylesheet" type="text/css" href="assets/styles/main.min.css">
 </head>
 <body>
     <div id="mdd-header">
@@ -52,7 +51,7 @@
 
 	<div id="main-wrap">
 		<div class="head">
-			<h1>mdSkew.js <span>v1.0</span></h1>
+			<h1>mdSkew.js <span>v1.1</span></h1>
 			<p>Easily add a super-cool skew effect while scrolling your website.</p>
 		</div>
 		<div class="actions">
@@ -136,6 +135,15 @@
 		</div>
 
 		<div class="section">
+			<h3>Changelog</h3>
+			<h4>1.1</h4>
+			<ul>
+				<li>- added check if element is in viewport</li>
+				<li>- added mobile support</li>
+			</ul>
+		</div>
+
+		<div class="section">
 			<h3>License</h3>
 			<p>The credit comments in the JavaScript and CSS files should be kept intact (even after combination or minification )</p>
 
@@ -151,29 +159,6 @@
 		</div>
 	</div>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script>
-    (function($) {
-
-        var $mddShare = $('#mdd-share'),
-            $mddShareOpen = $('#mdd-share--open'),
-            $mddShareClose = $('#mdd-share--close'),
-            $mddShareLayer = $('#mdd-share--layer');
-
-        $mddShareOpen.on('click', function() {
-            $mddShare.addClass('in');
-            return false;
-        });
-
-        $mddShareClose.on('click', function() {
-            $mddShare.removeClass('in');
-            return false;
-        });
-
-        $mddShareLayer.find('.md-share').on('click', function() {
-            window.open(jQuery(this).attr('href'), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');
-            return false;
-        });
-    })(jQuery);
-    </script>
+    <script src="assets/scripts/common.js"></script>
 </body>
 </html>

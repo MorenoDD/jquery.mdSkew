@@ -1,5 +1,4 @@
-_build
-assets/scripts
 sftp-config.json
+node_modules
 test.html
 mdSkew.test.js

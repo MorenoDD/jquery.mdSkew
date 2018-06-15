@@ -1,0 +1,38 @@
+{
+    "name": "mdSkew.js",
+    "verision": "1.0",
+    "description": "Easily add a super-cool skew effect while scrolling your website.",
+    "main": "dist/mdSkew.js",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:MorenoDD/mdSkew.js"
+    },
+    "keywords": [
+        "javacript",
+        "scrolling",
+        "skew",
+        "animation",
+        "scroll"
+    ],
+    "files": [
+        "dist",
+        "package.json",
+        "README.md"
+    ],
+    "authors": [
+        "Moreno Di Domenico https://github.com/MorenoDD"
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/MorenoDD/mdSkew.js/issues"
+    },
+    "homepage": "https://github.com/MorenoDD/mdSkew.js",
+    "devDependencies": {
+        "gulp": "^3.9.0",
+        "gulp-jshint": "^2.1.0",
+        "gulp-livereload": "^3.8.1",
+        "gulp-uglify": "^2.0.1",
+        "jshint": "^2.9.5",
+        "jshint-stylish": "^2.2.1"
+    }
+}

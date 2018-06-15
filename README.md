@@ -1,4 +1,4 @@
-# mdSkew.js (v1.0)
+# mdSkew.js (v1.1)
 
 ---
 
@@ -79,6 +79,11 @@ Donations would be more than welcome :)
 
 ## Sponsors
 Become a sponsor and get your logo on our README on Github with a link to your site. 
+
+## Changelog
+### 1.1
+- added check if element is in viewport
+- added mobile support
 
 ## License
 
